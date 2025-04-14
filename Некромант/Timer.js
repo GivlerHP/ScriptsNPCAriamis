@@ -1,10 +1,11 @@
 var blockX = 4122;
 var blockY = 6;
 var blockZ = 5620;
-var glassType = world.createItem("Thaumcraft:blockHole", 0, 1);
-var stoneType = world.createItem("minecraft:stone", 0, 1); 
-var chilType = world.createItem("minefantasy2:blacksteel_bars", 0, 1); 
-var TeleportParticle = "flame";
+var CallParticle = "smoke"
+var glassType = world.createItem("Thaumcraft:blockHole", 0, 1); // Тип блока: стекло
+var stoneType = world.createItem("minecraft:stone", 0, 1); // Тип блока: камень
+var chilType = world.createItem("minefantasy2:blacksteel_bars", 0, 1); // Тип блока: стекло
+
 
 // Функция для установки блока
 function setBlock(x, y, z, type) {
@@ -31,3 +32,28 @@ var glassPositions = [
         setBlock(blockX, blockY, blockZ, chilType);
         setBlock(blockX, blockY + 1, blockZ, chilType);
     }
+    var world = npc.getWorld(); 
+    
+//Призываем 2 мага
+    if(event.id == 2) {
+world.spawnClone(4112, 9, 5614, "1", "Восставший маг");
+world.spawnClone(4095, 8, 5616, "1", "Восставший маг");
+
+npc.executeCommand("/playsound mbo:bloodlus @a"); 
+
+npc.world.spawnParticle(CallParticle, npc.x, npc.y, npc.z, 0, 1.5, 0.5, 0.5, 200);
+        }
+//призываем 6 войнов
+
+            if(event.id == 3) {
+world.spawnClone(4112, 7, 5623, "1", "Восставший лучник");
+world.spawnClone(4093, 7, 5623, "1", "Восставший арбалетчик");
+world.spawnClone(4107, 6, 5632, "1", "Восставший воин");
+world.spawnClone(4102, 6, 5631, "1", "Восставший копейщик");
+world.spawnClone(4108, 6, 5621, "1", "Восставший мечник");
+world.spawnClone(4101, 6, 5620, "1", "Восставший алебардщик");
+
+npc.executeCommand("/playsound mbo:bloodlus @a"); 
+
+npc.world.spawnParticle(CallParticle, npc.x, npc.y, npc.z, 0, 1.5, 0.5, 0.5, 200);
+        }
