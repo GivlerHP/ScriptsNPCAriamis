@@ -1,0 +1,15 @@
+Инициализация = Init
+Обновление = Update
+Взаимодействие = Interact
+Диалог = Dialog
+Получ. урон = Damage
+Убит = Killed
+Атакует = Attack
+Цель = Target
+Столкновение = Collide
+Убивает = Kills
+Закрыв. диалог = Dialog Closed
+Таймер = Timer
+Target Lost
+Prog. Tick
+Prog. Impact
